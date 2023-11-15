@@ -11,6 +11,18 @@
       "email": "carolinasrios2004@gmail.com",
       "senha": "EuAmoOpedro",
       "id": 2
+    },
+    {
+      "nome": "Pedro",
+      "email": "carolinasrios2004@gmail.com.br",
+      "senha": "EuAmoOpedro",
+      "id": 3
+    },
+    {
+      "nome": "Pedro Augusto Barone",
+      "email": "pedrobarone2709@gmail.com",
+      "senha": "Pedro153045",
+      "id": 4
     }
   ]
 }

@@ -3,23 +3,8 @@ import { useNavigate, Link } from 'react-router-dom';
 import '../scss/Form.scss';
 
 function Login() {
-  function generateToken() {
-    const array = new Uint32Array(1);
-    window.crypto.getRandomValues(array);
-    return array[0].toString(16);
-  }
   
-  function createSession() {
-    if (!sessionStorage.getItem('sessionToken')) {
-      sessionStorage.setItem('sessionToken', generateToken());
-    } else {
-      console.log('Uma sessão já está ativa.');
-    }
-  }
-  
-  createSession();
-  
-  document.title = "Smart Grid | Login";
+  document.title = "hAppVida Fitness | Login";
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const history = useNavigate();
@@ -54,30 +39,25 @@ function Login() {
     try {
       const response = await fetch('http://localhost:3000/users');
       if (!response.ok) {
-        throw new Error('Erro ao buscar usuários.');
+          throw new Error('Erro ao buscar usuários.');
       }
       const users = await response.json();
       const user = users.find(user => user.email === email.trim() && user.senha === senha.trim());
 
       if (user) {
-        sessionStorage.setItem('isLoggedIn', 'true');
-        alert("Login bem sucedido! Bem-vindo(a) " + user.nome + "!");
-        history('/'); 
+          sessionStorage.setItem('isLoggedIn', 'true');
+          sessionStorage.setItem('userName', user.nome); // Store user's name in session storage
+          history('/'); 
+          alert("Login bem sucedido! Bem-vindo(a) " + user.nome + "!");
       } else {
-        alert("Credenciais de Login não encontradas.");
+          alert("Credenciais de Login não encontradas.");
       }
-    } catch (error) {
+  } catch (error) {
       alert("Erro ao validar o login: " + error.message);
-    }
-  };
+  }
+};
 
-  const handleLogout = () => {  
-    sessionStorage.removeItem('isLoggedIn');
-    sessionStorage.removeItem('sessionToken'); 
-    sessionStorage.setItem('sessionToken', generateToken());
-    alert('Você foi desconectado.');
-    history('/'); 
-  };
+
 
   return (
     <>
@@ -93,7 +73,7 @@ function Login() {
         <br />
         <div className='containerLoginButton'>
           <button type="button" id='loginButton' onClick={handleLogin}>Login</button>
-          <button type="button" id='loginButton' onClick={handleLogout}>Logout</button>
+        
         </div>  
         <h2>Não tem uma conta? <Link to="/cadastro">Clique aqui e faça seu cadastro</Link></h2>
       </form>

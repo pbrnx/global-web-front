@@ -1,0 +1,54 @@
+$button-bg: #0099ff;
+$button-bg-hover: #b4d2ff;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.headerContainer {
+    width: 100%; 
+  
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    padding: 10px;
+    width: 100%; 
+
+    .header-icon {
+        span {
+            font-size: 24px;
+            img {
+                width: 150px; 
+            }
+        }
+    }
+
+    .header-user-info {
+        display: flex;
+        align-items: center;
+
+        span {
+            margin-right: 10px;
+        }
+
+        #logoutButton {
+            background-color: $button-bg;
+            color: rgb(0, 0, 0);
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: $button-bg-hover;
+            }
+        }
+    }
+}

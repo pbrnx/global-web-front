@@ -1,38 +1,31 @@
-
 import React from 'react';
-import "./Header.scss";
+import './Header.scss';
+import { useNavigate } from 'react-router-dom';
+import Logo from "../../assets/logo.png";
 
+export default function Header() {
+    const navigate = useNavigate();
+    const userName = sessionStorage.getItem('userName'); // Retrieve user's name from session storage
 
+    function handleLogout() {
+        sessionStorage.removeItem('isLoggedIn');
+        sessionStorage.removeItem('sessionToken');
+        sessionStorage.removeItem('userName'); // Remove user's name from session storage
+        navigate('/login');
+    }
 
-
-function Header() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a className="navbar-brand" href="/">
-            <img src={Logo} width="150" height="100" className="d-inline-block align-top" alt="Logo" />
-            
-          </a>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item active">
-                <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Features</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Pricing</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      );
-}
-
-export default Header;
+      <div className='headerContainer'>
+        <header className="header">
+            <div className="header-icon">
+                <span><img src={Logo} /></span>
+                
+            </div>
+            <div className="header-user-info">
+                <span>Olá, {userName}</span> {/* Display user's name */} 
+                <button id="logoutButton" onClick={handleLogout}>Logout</button>
+            </div>
+        </header>
+      </div>
+    );
+};
