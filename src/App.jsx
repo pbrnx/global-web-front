@@ -7,12 +7,12 @@ export default function App() {
 
   return (
     <>
-    <div className={style.container}>
+   
 
    
      <Outlet />
      <Rodape />
-     </div>
+     
     </>
   )
 }
