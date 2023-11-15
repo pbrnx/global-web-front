@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+
 import '../scss/Form.scss';
 
 function Login() {
@@ -81,7 +82,8 @@ function Login() {
 
   return (
     <>
-      <h1>Faça Login!</h1>
+      <h1>Faça Login</h1>
+      
       <form>
         <label htmlFor="loginPassword">Email:</label>
         <input type="text" placeholder="Digite seu email" required value={email} onChange={handleEmailChange} />
@@ -94,7 +96,9 @@ function Login() {
           <button type="button" id='loginButton' onClick={handleLogin}>Login</button>
           <button type="button" id='loginButton' onClick={handleLogout}>Logout</button>
         </div>  
+        <h2>Não tem uma conta? <Link to="/cadastro">Clique aqui e faça seu cadastro</Link></h2>
       </form>
+      
     </>
   );
 }

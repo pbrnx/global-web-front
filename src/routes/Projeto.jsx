@@ -1,7 +1,12 @@
+import Rodape from "../components/footer/Footer.jsx";
+import Header from "../components/header/Header.jsx";
+
+
 export default function Projeto() {
     return(
         <>
-        <h1>TESTE PROJETO</h1>
+        <Header />
+        <Rodape />
         </>
     )
 }
