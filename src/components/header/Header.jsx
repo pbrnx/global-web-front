@@ -1,7 +1,8 @@
+
 import React from 'react';
 import "./Header.scss";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Logo from "../../../../../Downloads/happvida-fitness-high-resolution-logo.png";
+
+
 
 
 function Header() {
