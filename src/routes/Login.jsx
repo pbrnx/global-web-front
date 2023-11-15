@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import '../scss/Form.scss';
 
 function Login() {
-
   function generateToken() {
     const array = new Uint32Array(1);
     window.crypto.getRandomValues(array);

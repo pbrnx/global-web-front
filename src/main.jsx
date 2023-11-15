@@ -1,19 +1,33 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
-
-
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import { createBrowserRouter, RouterProvider, Route, Navigate } from 'react-router-dom';
 
 import Cadastro from './routes/Cadastro.jsx';
 import Login from './routes/Login';
+import Projeto from './routes/Projeto.jsx';
+
+// Função para verificar se o usuário está logado
+const requireAuth = () => {
+  return sessionStorage.getItem('isLoggedIn') === 'true' ? true : false;
+};
+
+// Componente de rota protegida
+const ProtectedRoute = ({ children }) => {
+  if (!requireAuth()) {
+    // Se não estiver logado, redireciona para o login
+    return <Navigate to="/login" />;
+  }
+  return children;
+};
+
 const router = createBrowserRouter([
-      {path:"/cadastro" , element:<Cadastro/>},
-      {path:"/login" , element:<Login/>}  
-    ]
-);
+  { path: "/cadastro", element: <Cadastro /> },
+  { path: "/login", element: <Login /> },
+  // Protege a rota do Projeto
+  { path: "/", element: <ProtectedRoute><Projeto /></ProtectedRoute> }
+]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router}/>
-)
+  <RouterProvider router={router} />
+);
