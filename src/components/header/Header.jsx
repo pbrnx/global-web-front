@@ -23,7 +23,7 @@ export default function Header({ children }) {
       <div className='headerContainer'>
         <header className="header">
             <div className="header-icon">
-                <span><img src={Logo} alt="Logo" /></span>
+              <img src={Logo} alt="Logo" />
             </div>
             <div className="header-user-info">
                 <span>Olá! Seja bem-vindo(a) {userName}</span>

@@ -1,6 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
-
-html, button{
-    font-family: 'Rubik', sans-serif;
-}
-
+@font-face {
+    font-family: 'SF-Pro';
+    src: url('./assets/SF-Pro.ttf') format('opentype');
+  }
+  
+  html, button {
+    font-family: 'SF-Pro', sans-serif;
+  }
+  
+  h1,h2,label, form{
+    font-weight: 300;
+  }

@@ -10,52 +10,52 @@ $button-bg-hover: #b4d2ff;
 
 .headerContainer {
     width: 100%; 
-  
-}
+   
 
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #f0f0f0;
-    padding: 10px;
-    width: 100%; 
-
-    .header-icon {
-        img {
-            width: 150px; 
-        }
-        
-    }
-
-    .header-user-info {
+    .header {
         display: flex;
-        flex-direction: column;
         align-items: center;
+        justify-content: space-between;
+        background-color: #dde9ff;
+        padding: 0;
+        width: 100%; 
+        
 
-        span {
-            margin-right: 10px;
+        .header-icon {
+            img {
+                width: 200px; 
+            }
+            
+        }
+
+        .header-user-info {
             display: flex;
             flex-direction: column;
-        }
-        #logoutContainer{
-            padding: 10%;
-       
-        #logoutButton {
-            background-color: $button-bg;
-            color: rgb(0, 0, 0);
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: 0.3s;
-          
+            align-items: center;
 
-            &:hover {
-                background-color: $button-bg-hover;
+            span {
+                margin-right: 10px;
+                display: flex;
+                flex-direction: column;
+            }
+            #logoutContainer{
+                padding: 5%;
+                padding-bottom: 0;
+        
+            #logoutButton {
+                background-color: $button-bg;
+                color: rgb(0, 0, 0);
+                border: none;
+                padding: 5px 10px;
+                cursor: pointer;
+                border-radius: 4px;
+                transition: 0.3s;
+                &:hover {
+                    background-color: $button-bg-hover;
             }
         }
     }
 }
 
+}
 }

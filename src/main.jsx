@@ -4,6 +4,7 @@ import './index.css';
 import { createBrowserRouter, RouterProvider, Route, Navigate } from 'react-router-dom';
 import Header from './components/header/Header.jsx';
 
+
 import Cadastro from './routes/Cadastro.jsx';
 import Login from './routes/Login';
 import Projeto from './routes/Projeto.jsx';
