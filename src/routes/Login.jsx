@@ -61,7 +61,7 @@ function Login() {
 
   return (
     <>
-    <Header />
+    
       <h1>Faça Login</h1>
       
       <form>

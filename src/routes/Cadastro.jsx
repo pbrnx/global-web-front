@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import '../scss/Form.scss';
-import Header from '../components/header/Header';
+
 
 function Cadastro() {
   document.title = "hAppVida Fitness | Cadastre-se";
@@ -90,7 +90,7 @@ function Cadastro() {
 
   return (
     <>
-      <Header />
+     
  <h1>Cadastre-se e faça parte do nosso projeto!</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="loginUsername">Nome:</label>
@@ -110,6 +110,7 @@ function Cadastro() {
         <br />
 
         <button type="submit" id="cadastroButton">Cadastrar</button>
+        <h2>Já tem uma conta? <Link to="/login">Clique aqui e faça seu Login</Link></h2>
       </form>
     </>
   );

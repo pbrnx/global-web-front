@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
-import Cabecalho from "./components/Cabecalho/Cabecalho";
+import Header from "./components/header/Header";
+
 import Rodape from "./components/Rodape/Rodape"
 
 export default function App(){
@@ -8,13 +9,13 @@ export default function App(){
     <>
      
        
-        <Cabecalho/>
+     
         
         
         <Outlet/>
 
 
-        <Rodape/>
+     
     
       
     </>
