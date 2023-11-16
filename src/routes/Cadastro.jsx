@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import '../scss/Form.scss';
+import Header from '../components/header/Header';
 
 function Cadastro() {
   document.title = "hAppVida Fitness | Cadastre-se";
@@ -89,6 +90,7 @@ function Cadastro() {
 
   return (
     <>
+      <Header />
  <h1>Cadastre-se e faça parte do nosso projeto!</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="loginUsername">Nome:</label>

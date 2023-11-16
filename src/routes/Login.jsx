@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import '../scss/Form.scss';
+import Header from '../components/header/Header';
 
 function Login() {
   
@@ -46,7 +47,8 @@ function Login() {
 
       if (user) {
           sessionStorage.setItem('isLoggedIn', 'true');
-          sessionStorage.setItem('userName', user.nome); // Store user's name in session storage
+          sessionStorage.setItem('userName', user.nome); 
+          sessionStorage.setItem('userMail', user.email);// Guardar informações do usuário no session storage
           history('/'); 
           alert("Login bem sucedido! Bem-vindo(a) " + user.nome + "!");
       } else {
@@ -57,10 +59,9 @@ function Login() {
   }
 };
 
-
-
   return (
     <>
+    <Header />
       <h1>Faça Login</h1>
       
       <form>
