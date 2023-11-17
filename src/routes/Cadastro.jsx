@@ -81,7 +81,7 @@ function Cadastro() {
         throw new Error('Erro ao cadastrar. Tente novamente.');
       }
 
-      alert('Cadastro realizado com sucesso! \nObrigado por fazer parte do Smart Grid');
+      alert('Cadastro realizado com sucesso! \nObrigado por fazer parte do hAppVida Fitness');
       history('/login');
     } catch (error) {
       alert(error.message);
