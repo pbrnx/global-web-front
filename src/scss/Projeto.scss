@@ -1,0 +1,103 @@
+
+$font-color: #333;
+
+$secondary-color: #eaeaea; 
+
+
+.main-content {
+    color: $font-color;
+    display: flex;
+    align-items: flex-start; 
+    justify-content: space-between; 
+  
+    .carousel-container {
+      flex: 1; 
+      max-width: 50%;
+  
+      img {
+        width: 100%; 
+        height: auto;
+       padding: 5%;
+      }
+    }
+  
+    .solution-container {
+      flex: 1; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center; 
+      padding: 20px;
+    }
+  
+    .solution-article {
+
+        display: flex;
+        flex-direction: column;
+        text-align: left; // Alinha o texto à esquerda
+        padding-left: 10%
+   
+    }
+
+    .solution-title-container{
+       
+        padding: 20px;
+        margin: 0;
+        display: flex;
+        p{
+            padding-left: 12%;
+            width: 50%;
+        }
+   
+    .solution-title { // Estilos para o título
+        text-align: center;
+         // Espaço acima do título
+        font-size: 240%;
+        
+       
+        // Tamanho do texto, ajuste conforme necessário
+      }
+    }
+
+  
+    .additional-info {
+      background-color: $secondary-color;
+      padding: 20px; 
+      
+    }
+  }
+
+  .vantagens{
+    text-align: left;
+    padding-left:1%;
+  }
+
+  .photos-section {
+    display: flex; // Usa Flexbox para centralizar o conteúdo
+    justify-content: center; // Centraliza o conteúdo horizontalmente
+    margin-top: 20px; 
+
+        display: inline-table; // Faz a tabela se comportar como um elemento em linha para alinhamento central
+        margin: auto; // Adicional para garantir o alinhamento central
+  
+      td {
+        // Divide a largura igualmente entre as três fotos
+         // Espaço ao redor das fotos dentro da célula
+  
+        img {
+          width: 50%; // Faz a imagem preencher a célula
+          height: auto; // Mantém a proporção da imagem
+          display: block; // Remove espaço extra abaixo da imagem
+          aspect-ratio: 9/16;
+          transform: translatex(50%);
+          object-fit: cover;
+          opacity: .5;
+          transition: .5s;
+          padding-top:1%;
+        }
+        img:hover{
+           
+            opacity: 1;
+        }
+      
+    }
+  }
