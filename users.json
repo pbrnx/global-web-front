@@ -1,22 +1,10 @@
 {
   "users": [
     {
-      "nome": "Hugo",
-      "email": "hugo@teste.com",
+      "nome": "Usuário de Teste",
+      "email": "user@teste.com",
       "senha": "12345",
       "id": 1
-    },
-    {
-      "nome": "Enrico Bobao",
-      "email": "enricogabriel2509@gmail.com",
-      "senha": "250911",
-      "id": 2
-    },
-    {
-      "nome": "Pedro Barone",
-      "email": "pedrobarone2709@gmail.com",
-      "senha": "Pedro153045",
-      "id": 3
     }
   ]
 }
