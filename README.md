@@ -1,6 +1,6 @@
 # Aplicação hAppVida Fitness
 Uma aplicação que demonstra o que a hAppVida Fitness é, simulando cadastro e login via API Json.
-Para testar, logue com o usuário presente no arquivo "users.json" (login: user@teste.com // Senha 12345). Caso deseje, também pode cadastrar o seu próprio usuário pela UI do site.
+Para testar, logue com o usuário presente no arquivo "users.json" (Login: user@teste.com // Senha: 12345). Caso deseje, também pode cadastrar o seu próprio usuário pela UI do site.
 
 - [Node.js](https://nodejs.org/en/)
 - [json-server](https://www.npmjs.com/package/json-server) (para simular uma API RESTful)
