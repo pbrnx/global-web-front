@@ -42,43 +42,48 @@ export default function Home() {
           </aside>
         </section>
       </main>
+      <div className='vantagens'>
+        <h1>Por que utilizar?</h1>
+        <p>Envelheça com saúde, controle seu peso e ajuste sua dieta, tudo em apenas um lugar! Consulte nossos preços e escolha o plano que melhor atenda às suas necessidades.</p>
+      </div>
 
-      <h1 className='vantagens'>Por que utilizar?</h1>
-      <table className='photos-section'>
-        <tbody>
-          <tr>
-            <td className="image-container">
-        <img 
-          className="imgP1"
-          src={hoveredImage === 1 ? "/assets/vantagem2.png" : "/assets/vantagem1.png"} 
-          alt="Vantagem" 
-          onMouseEnter={() => setHoveredImage(1)} 
-          onMouseLeave={() => setHoveredImage(null)}
+    <div className='photos-section'>
+      <div className="img-container">
+          <img className='imgP1'
+              src={hoveredImage === 1 ? "/assets/vantagem2.png" : "/assets/vantagem1.png"} 
+              alt="Vantagem" 
+              onMouseEnter={() => setHoveredImage(1)} 
+              onMouseLeave={() => setHoveredImage(null)}
+          />
+      </div>
+    
+    
+    <div className="img-container">
+        <img className='imgP1'
+            
+            src={hoveredImage === 2 ? "/assets/vantagem4.png" : "/assets/vantagem3.png"} 
+            alt="Vantagem" 
+            onMouseEnter={() => setHoveredImage(2)} 
+            onMouseLeave={() => setHoveredImage(null)}
         />
-        <h1>Envelheça com saúde</h1>
-      </td>
-            <td>
-              <img className="table-img"
-                src={hoveredImage === 2 ? "/assets/vantagem4.png" : "/assets/vantagem3.png"} 
-                alt="Vantagem" 
-                onMouseEnter={() => setHoveredImage(2)} 
-                onMouseLeave={() => setHoveredImage(null)}
-              />
-              <h1>Monitore seu peso</h1>
-            </td>
+        
+        
+    </div>
+   
+    <div className="img-container">
+        <img  className='imgP1'
+            src={hoveredImage === 3 ? "/assets/vantagem6.png" : "/assets/vantagem5.png"} 
+            alt="Vantagem" 
+            onMouseEnter={() => setHoveredImage(3)} 
+            onMouseLeave={() => setHoveredImage(null)}
+        />
+        
+    </div>
 
-            <td>
-              <img 
-                src={hoveredImage === 3 ? "/assets/vantagem6.png" : "/assets/vantagem5.png"} 
-                alt="Vantagem" 
-                onMouseEnter={() => setHoveredImage(3)} 
-                onMouseLeave={() => setHoveredImage(null)}
-              />
-              <h1>Ajuste sua Dieta</h1>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+</div>
+
+
+
       <Footer />
     </>
   );

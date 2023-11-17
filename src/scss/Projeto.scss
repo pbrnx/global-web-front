@@ -1,8 +1,5 @@
-
 $font-color: #333;
-
 $secondary-color: #eaeaea; 
-
 
 .main-content {
     color: $font-color;
@@ -34,7 +31,8 @@ $secondary-color: #eaeaea;
         display: flex;
         flex-direction: column;
         text-align: left; // Alinha o texto à esquerda
-        padding-left: 10%
+        padding-left: 10%;
+       
    
     }
 
@@ -52,8 +50,7 @@ $secondary-color: #eaeaea;
         text-align: center;
          // Espaço acima do título
         font-size: 240%;
-        
-       
+
         // Tamanho do texto, ajuste conforme necessário
       }
     }
@@ -66,73 +63,48 @@ $secondary-color: #eaeaea;
     }
   }
 
-  .vantagens{
+  .vantagens, h1{
     text-align: left;
     padding-left:1%;
-  }
-
-  .photos-section {
-    display: flex; // Usa Flexbox para centralizar o conteúdo
-    justify-content: center; // Centraliza o conteúdo horizontalmente
-    margin-top: 20px; 
-    position:relative;
-    display: inline-table; // Faz a tabela se comportar como um elemento em linha para alinhamento central
-    margin: auto; // Adicional para garantir o alinhamento central
-   
-  
-      td {
-        // Divide a largura igualmente entre as três fotos
-         // Espaço ao redor das fotos dentro da célula
-         transform: translatex(10%);
-  
-        img {
-          width: 50%; // Faz a imagem preencher a célula
-          height: auto; // Mantém a proporção da imagem
-          display: block; // Remove espaço extra abaixo da imagem
-          aspect-ratio: 9/16;
-          
-          object-fit: cover;
-          padding-top:5%;
-          opacity: 0.4;
-          transition:1s;
-          
-          
-        }
-        img:hover{
-            opacity: 1;
-            
-        }
+    
+   p{
+      font-size: 120%;
+      padding-left:1%;
     }
   }
 
-  .image-container {
-    overflow: hidden; // Evita que a imagem ampliada ultrapasse os limites do container
-    position: relative; // Necessário para o posicionamento absoluto da imagem
-    height: auto; // ou um valor fixo conforme necessário
-  }
-  
-  img.imgP1 {
-    height: auto; 
-    transition: transform 0.5s ease; 
-    display: block;
-    top: 0;
-    left: 0;
-    transform: scale(1);
-  }
-  
-  .image-container:hover img.imgP1 {
-    transform: scale(1.2);
-  
+.photos-section {
+  display: flex; 
+  justify-content: center; 
+  margin-top: 20px; 
+  padding-bottom:5%;
+ 
+    .img-container {
+      min-width: 10%; 
+      overflow: hidden;
+      margin-left: 5%;
+      margin-right: 5%;
+      height: auto;
+      border-radius: 15px;
+      
+    }
+    img.imgP1 {
+      width: 100%;
+      
+      filter: grayscale(100%);
+    }
 
-  }
-
+    .img-container:hover img.imgP1 {
+      transform: scale(1.2); 
+      transition:  0.3s ease;
     
-  .image-container:not(:hover) img.imgP1 {
-    transform: scale(1);
-  
+      filter: grayscale(0);
+    }
 
-  }
+    .img-container:not(:hover) img.imgP1 {
+      transform: scale(1); 
+      transition:  0.5s ease;
+    }
 
-  .image-container{
-    padding-left: 10%;
-  }
+
+}
