@@ -1,8 +1,26 @@
-# React + Vite
+# Aplicação hAppVida Fitness
+Uma aplicação que demonstra o que a hAppVida Fitness é, simulando cadastro e login via API Json.
+Para testar, logue com o usuário presente no arquivo "users.json" (login: user@teste.com // Senha 12345). Caso deseje, também pode cadastrar o seu próprio usuário pela UI do site.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- [Node.js](https://nodejs.org/en/)
+- [json-server](https://www.npmjs.com/package/json-server) (para simular uma API RESTful)
 
-Currently, two official plugins are available:
+## Passo a Passo para Configuração
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Instalação de Dependências**
+   No diretório raiz do projeto, execute:
+npm install, isso vai instalar os módulos necessários, incluindo o json-server.
+
+2. **Iniciar a Simulação da API**
+No diretório raiz do projeto, execute:
+npm run backend
+
+Isso inicia o `json-server` na porta 3000, usando `users.json` como seu banco de dados.
+
+3. **Executar a Aplicação**
+Em um novo terminal (sem fechar o json-server), navegue até o diretório raiz do projeto e execute:
+npm run dev
+
+A aplicação deve ser iniciada em qualquer porta que **NÃO** seja a 3000, já que essa é a porta da base de dados json onde ficam os usuários.
+
+
