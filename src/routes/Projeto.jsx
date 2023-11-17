@@ -1,11 +1,14 @@
 import React from 'react';
 import Header from "../components/header/Header.jsx";
 import Footer from "../components/footer/Footer.jsx";
-import imgSolucao from "../assets/smart1.png";
+import { useState } from 'react';
 import "../scss/Projeto.scss";
 
 export default function Home() {
   document.title = "hAppVida Fitness | Home";
+
+
+  const [hoveredImage, setHoveredImage] = useState(null);
 
   return (
     <>
@@ -13,7 +16,7 @@ export default function Home() {
       <main className="main-content">
         <section className="carousel-container">
           <aside className="carousel">
-            <img src={imgSolucao} alt="Solução inteligente" />
+            <img src="/assets/imgtexto.png" alt="Solução inteligente" />
             <div className='solution-title-container'>
               <h1 className="solution-title">hAppVida Fitness</h1> 
               
@@ -41,22 +44,42 @@ export default function Home() {
       </main>
 
       <h1 className='vantagens'>Por que utilizar?</h1>
-      
-        <table className='photos-section'>
-          <tbody>
-            <tr>
-              <td><img src={imgSolucao} alt="Foto 1" /></td>
-              <td><img src={imgSolucao} alt="Foto 2" /></td>
-              <td><img src={imgSolucao} alt="Foto 3" /></td>
-            </tr>
-          </tbody>
-        </table>
-      
-      {/* Fim da nova seção com a tabela de fotos */}
+      <table className='photos-section'>
+        <tbody>
+          <tr>
+            <td className="image-container">
+        <img 
+          className="imgP1"
+          src={hoveredImage === 1 ? "/assets/vantagem2.png" : "/assets/vantagem1.png"} 
+          alt="Vantagem" 
+          onMouseEnter={() => setHoveredImage(1)} 
+          onMouseLeave={() => setHoveredImage(null)}
+        />
+        <h1>Envelheça com saúde</h1>
+      </td>
+            <td>
+              <img className="table-img"
+                src={hoveredImage === 2 ? "/assets/vantagem4.png" : "/assets/vantagem3.png"} 
+                alt="Vantagem" 
+                onMouseEnter={() => setHoveredImage(2)} 
+                onMouseLeave={() => setHoveredImage(null)}
+              />
+              <h1>Monitore seu peso</h1>
+            </td>
 
+            <td>
+              <img 
+                src={hoveredImage === 3 ? "/assets/vantagem6.png" : "/assets/vantagem5.png"} 
+                alt="Vantagem" 
+                onMouseEnter={() => setHoveredImage(3)} 
+                onMouseLeave={() => setHoveredImage(null)}
+              />
+              <h1>Ajuste sua Dieta</h1>
+            </td>
+          </tr>
+        </tbody>
+      </table>
       <Footer />
-
-     
     </>
   );
 }

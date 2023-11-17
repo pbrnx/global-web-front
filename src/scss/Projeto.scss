@@ -75,29 +75,64 @@ $secondary-color: #eaeaea;
     display: flex; // Usa Flexbox para centralizar o conteúdo
     justify-content: center; // Centraliza o conteúdo horizontalmente
     margin-top: 20px; 
-
-        display: inline-table; // Faz a tabela se comportar como um elemento em linha para alinhamento central
-        margin: auto; // Adicional para garantir o alinhamento central
+    position:relative;
+    display: inline-table; // Faz a tabela se comportar como um elemento em linha para alinhamento central
+    margin: auto; // Adicional para garantir o alinhamento central
+   
   
       td {
         // Divide a largura igualmente entre as três fotos
          // Espaço ao redor das fotos dentro da célula
+         transform: translatex(10%);
   
         img {
           width: 50%; // Faz a imagem preencher a célula
           height: auto; // Mantém a proporção da imagem
           display: block; // Remove espaço extra abaixo da imagem
           aspect-ratio: 9/16;
-          transform: translatex(50%);
+          
           object-fit: cover;
-          opacity: .5;
-          transition: .5s;
-          padding-top:1%;
+          padding-top:5%;
+          opacity: 0.4;
+          transition:1s;
+          
+          
         }
         img:hover{
-           
             opacity: 1;
+            
         }
-      
     }
+  }
+
+  .image-container {
+    overflow: hidden; // Evita que a imagem ampliada ultrapasse os limites do container
+    position: relative; // Necessário para o posicionamento absoluto da imagem
+    height: auto; // ou um valor fixo conforme necessário
+  }
+  
+  img.imgP1 {
+    height: auto; 
+    transition: transform 0.5s ease; 
+    display: block;
+    top: 0;
+    left: 0;
+    transform: scale(1);
+  }
+  
+  .image-container:hover img.imgP1 {
+    transform: scale(1.2);
+  
+
+  }
+
+    
+  .image-container:not(:hover) img.imgP1 {
+    transform: scale(1);
+  
+
+  }
+
+  .image-container{
+    padding-left: 10%;
   }

@@ -2,27 +2,21 @@
   "users": [
     {
       "nome": "Hugo",
-      "email": "teste@hugo.com",
-      "senha": "SenhaHugo",
+      "email": "hugo@teste.com",
+      "senha": "12345",
       "id": 1
     },
     {
-      "nome": "Carol",
-      "email": "carolinasrios2004@gmail.com",
-      "senha": "EuAmoOpedro",
+      "nome": "Enrico Bobao",
+      "email": "enricogabriel2509@gmail.com",
+      "senha": "250911",
       "id": 2
     },
     {
-      "nome": "Pedro",
-      "email": "carolinasrios2004@gmail.com.br",
-      "senha": "EuAmoOpedro",
-      "id": 3
-    },
-    {
-      "nome": "Pedro Augusto Barone",
+      "nome": "Pedro Barone",
       "email": "pedrobarone2709@gmail.com",
       "senha": "Pedro153045",
-      "id": 4
+      "id": 3
     }
   ]
 }
