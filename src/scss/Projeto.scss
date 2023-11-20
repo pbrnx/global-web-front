@@ -110,15 +110,9 @@ $secondary-color: #eaeaea;
 
 @media (max-width:768px){
   .main-content{
-    display: flex;
     flex-direction: column;
-  }
-  
-  .carousel-container{
-    max-width: 100%;
     .carousel{
-      width: 200%;
+        width: 200%;
     }
   }
-
 }
