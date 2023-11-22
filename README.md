@@ -13,14 +13,12 @@ npm install, isso vai instalar os módulos necessários, incluindo o json-server
 
 2. **Iniciar a Simulação da API**
 No diretório raiz do projeto, execute:
-npm run backend
+***npm run dev***
 
-Isso inicia o `json-server` na porta 3000, usando `users.json` como seu banco de dados.
+Isso inicia o `json-server` na porta 3000, usando `users.json` como seu banco de dados, e conjuntamente inicia a aplicação. 
+Isso foi feito baseado num script no package.json, usando o módulo `npm-run-all`.
 
-3. **Executar a Aplicação**
-Em um novo terminal (sem fechar o json-server), navegue até o diretório raiz do projeto e execute:
-npm run dev
 
-A aplicação deve ser iniciada em qualquer porta que **NÃO** seja a 3000, já que essa é a porta da base de dados json onde ficam os usuários.
+A aplicação deve ser iniciada em qualquer porta que **NÃO** seja a 3000, já que essa é a porta da base de dados json onde ficam os usuários, então por favor, fique atento para que não haja nenhum terminal que esteja utilizando essa porta.
 
 
