@@ -3,6 +3,17 @@ import { useNavigate, Link } from 'react-router-dom';
 import '../scss/Form.scss';
 import toast from 'react-hot-toast';
 
+function gerarToken() {
+  let token = '';
+  const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  const tamanho = 15;
+
+  for (let i = 0; i < tamanho; i++) {
+      token += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+  }
+
+  return token;
+}
 
 function Login() {
   
@@ -47,7 +58,8 @@ function Login() {
       const user = users.find(user => user.email === email.trim() && user.senha === senha.trim());
 
       if (user) {
-          sessionStorage.setItem('isLoggedIn', 'true');
+          const token = gerarToken();
+          sessionStorage.setItem('userToken', token);
           sessionStorage.setItem('userName', user.nome); 
           sessionStorage.setItem('userMail', user.email);// Guardar informações do usuário no session storage
           toast.success("Login bem sucedido! Bem-vindo(a) " + user.nome + "!");

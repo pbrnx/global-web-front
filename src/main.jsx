@@ -13,7 +13,12 @@ import App from './App.jsx';
 
 // Função para verificar se o usuário está logado
 const requireAuth = () => {
-  return sessionStorage.getItem('isLoggedIn') === 'true' ? true : false;
+  const token = sessionStorage.getItem('userToken');
+  const userMail = sessionStorage.getItem('userMail');
+  const userName = sessionStorage.getItem('userName');
+  const MIN_TOKEN_LENGTH = 15; // Defina o comprimento mínimo que você considera válido para o token
+
+  return token && token.length >= MIN_TOKEN_LENGTH && userMail && userName;
 };
 
 // Componente de rota protegida
@@ -29,7 +34,7 @@ const ProtectedRoute = ({ children }) => {
 const router = createBrowserRouter([
   {path: "/", element:<App/>, 
     children:[
-      {path:"/" , element:<Projeto/>},
+      {path:"/" , element:<ProtectedRoute><Projeto/></ProtectedRoute>},
       {path:"/cadastro" , element:<Cadastro/>},
       {path:"/login" , element:<Login/>}
     ]}

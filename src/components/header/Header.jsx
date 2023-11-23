@@ -11,7 +11,7 @@ export default function Header({ children }) {
     const userMail = sessionStorage.getItem('userMail');
 
     function handleLogout() {
-        sessionStorage.removeItem('isLoggedIn');
+        sessionStorage.removeItem('userToken');
         sessionStorage.removeItem('userMail');
         sessionStorage.removeItem('userName');
         navigate('/login');
