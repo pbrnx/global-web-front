@@ -32,12 +32,14 @@ const ProtectedRoute = ({ children }) => {
 
 
 const router = createBrowserRouter([
-  {path: "/", element:<App/>, 
-    children:[
-      {path:"/" , element:<ProtectedRoute><Projeto/></ProtectedRoute>},
-      {path:"/cadastro" , element:<Cadastro/>},
-      {path:"/login" , element:<Login/>}
-    ]}
+  {
+    path: "/", element: <App />,
+    children: [
+      { path: "/", element: <ProtectedRoute><Projeto /></ProtectedRoute> },
+      { path: "/cadastro", element: <Cadastro /> },
+      { path: "/login", element: <Login /> }
+    ]
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

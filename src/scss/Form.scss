@@ -3,13 +3,15 @@ $button-bg: #0099ff;
 $button-bg-hover: #b4d2ff;
 
 form {
-    margin: 20px auto;
-    max-width: 400px;
-    padding: 35px;
-    border: 1px solid $border-color;
-    background-color: #f7f7f7;
-    border-radius: 5px;
-    zoom:150%;
+  margin: 20px auto;
+  margin-bottom: 13%;
+  max-width: 400px;
+  padding: 35px;
+  border: 1px solid $border-color;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  zoom: 150%;
+
   label {
     display: block;
     margin-bottom: 8px;
@@ -40,9 +42,9 @@ form {
 
     &:hover {
       background-color: $button-bg-hover;
-      
+
     }
-    
+
     &:not(:hover) {
       transition: background-color 0.3s ease;
     }
@@ -61,14 +63,14 @@ form {
     margin-right: 3%;
 
     &:hover {
-        background-color: $button-bg-hover;
-        
+      background-color: $button-bg-hover;
+
     }
 
     &:not(:hover) {
-        transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease;
     }
-}
+  }
 }
 
 
@@ -77,12 +79,12 @@ h1 {
   padding-top: 10px;
 }
 
-h2{
-  font-size:12px;
+h2 {
+  font-size: 12px;
   padding-top: 2%;
 }
 
-a{
+a {
   text-decoration: none;
 }
 

@@ -1,16 +1,25 @@
-.footer-container {
+
+  
+  .footer-container {
+    margin-top: auto; // Isso empurra o rodapé para baixo se o conteúdo acima dele não for suficiente para preencher a tela
     background-color: #333;
     color: #fff;
     padding: 1%;
     text-align: center;
-    bottom: 0; 
-    width: 100%; 
     font-size: 15px;
-}
-.footer-content {
+    // Remova 'position: absolute;' e 'bottom: 0;'
+    width: 100%;
+  }
+  
+  .footer-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-    
+    a {
+      color: #0099ff;
+      transition: 0.3s;
+    }
+    a:hover {
+      color: #b4d2ff;
+    }
+  }
   

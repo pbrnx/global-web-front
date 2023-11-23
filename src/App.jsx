@@ -4,14 +4,14 @@ import Header from "./components/header/Header";
 
 
 
-export default function App(){
+export default function App() {
 
   return (
     <>
-        <Toaster />
-        <Header />
-        <Outlet/> 
-        
+      <Toaster />
+      <Header />
+      <Outlet />
+
     </>
   )
 }

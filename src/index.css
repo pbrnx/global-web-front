@@ -1,12 +1,23 @@
 @font-face {
-    font-family: 'SF-Pro';
-    src: url('/assets/SF-Pro.ttf') format('opentype');
-  }
-  
-  html, button {
-    font-family: 'SF-Pro', sans-serif;
-  }
-  
-  h1,h2,label, form{
-    font-weight: 300;
-  }
+  font-family: 'SF-Pro';
+  src: url('/assets/SF-Pro.ttf') format('opentype');
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+button {
+  font-family: 'SF-Pro', sans-serif;
+}
+
+h1,
+h2,
+label,
+form {
+  font-weight: 300;
+}

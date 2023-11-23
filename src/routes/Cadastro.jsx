@@ -10,7 +10,7 @@ function Cadastro() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [checkboxChecked, setCheckboxChecked] = useState(false);
-  
+
   const history = useNavigate();
 
   const handleNomeChange = (event) => {
@@ -69,7 +69,7 @@ function Cadastro() {
     };
 
     try {
-      const response = await fetch('http://localhost:3000/users', { 
+      const response = await fetch('http://localhost:3000/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -90,19 +90,19 @@ function Cadastro() {
 
   return (
     <>
-    
- <h1>Cadastre-se e faça parte do nosso projeto!</h1>
+
+      <h1>Cadastre-se e faça parte do nosso projeto!</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="loginUsername">Nome:</label>
-        <input type="text" placeholder='Digite seu nome completo' required value={nome} onChange={handleNomeChange} />
+        <input type="text" placeholder='Digite seu nome completo'  value={nome} onChange={handleNomeChange} />
         <br />
 
         <label htmlFor="loginPassword">Email:</label>
-        <input type="text" placeholder='Digite seu Email' required value={email} onChange={handleEmailChange} />
+        <input type="text" placeholder='Digite seu Email' value={email} onChange={handleEmailChange} />
         <br />
 
         <label htmlFor="loginPassword">Senha:</label>
-        <input type="password" id="loginPassword" placeholder="Digite sua senha" required value={senha} onChange={handleSenhaChange} />
+        <input type="password" id="loginPassword" placeholder="Digite sua senha" value={senha} onChange={handleSenhaChange} />
         <br />
 
         <input type="checkbox" id="checkbox" checked={checkboxChecked} onChange={handleCheckboxChange} />

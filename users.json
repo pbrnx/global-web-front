@@ -5,6 +5,24 @@
       "email": "user@teste.com",
       "senha": "12345",
       "id": 1
+    },
+    {
+      "nome": "123",
+      "email": "123@",
+      "senha": "123",
+      "id": 2
+    },
+    {
+      "nome": "Pedro Barone",
+      "email": "pedrobarone2709@gmail.com",
+      "senha": "Pedro153045",
+      "id": 3
+    },
+    {
+      "nome": "123",
+      "email": "123@fafa",
+      "senha": "123",
+      "id": 4
     }
   ]
 }
