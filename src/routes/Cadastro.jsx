@@ -57,7 +57,7 @@ function Cadastro() {
     // Verifica se o e-mail já está cadastrado
     const emailExists = await verifyUserExists(email);
     if (emailExists) {
-      toast.error("Este email já está cadastrado!");
+      toast.error("Este email já está cadastrado! \n Por favor, escolha outro ou faça login.");
       return;
     }
 

@@ -15,7 +15,7 @@ export default function Login() {
   const isLoggedIn = sessionStorage.getItem('userToken');
 
     if (isLoggedIn) {
-      toast.success('Você já está logado.');
+      toast.error('Ocorreu um erro: Você já está logado.');
       history('/');
       return true;
     }
