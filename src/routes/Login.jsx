@@ -2,20 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import '../scss/Form.scss';
 import toast from 'react-hot-toast';
+import CryptoJS from 'crypto-js';
 
-function gerarToken() {
-  let token = '';
-  const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  const tamanho = 15;
-
-  for (let i = 0; i < tamanho; i++) {
-    token += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
-  }
-
-  return token;
-}
-
-function Login() {
+export default function Login() {
 
   document.title = "hAppVida Fitness | Login";
   const [email, setEmail] = useState('');
@@ -23,15 +12,17 @@ function Login() {
   const history = useNavigate();
 
   const checkPreviousLogin = () => {
-    const isLoggedIn = sessionStorage.getItem('userToken');
+  const isLoggedIn = sessionStorage.getItem('userToken');
 
     if (isLoggedIn) {
-      toast.error('Você já está logado.');
+      toast.success('Você já está logado.');
       history('/');
       return true;
     }
     return false;
   };
+
+  
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -47,6 +38,15 @@ function Login() {
     if (isAlreadyLoggedIn) {
       return;
     }
+
+    function gerarToken(email) {
+      // Gera a hash SHA-256 do email
+      const hashEmail = CryptoJS.SHA256(email).toString();
+
+      // Usa os primeiros 15 caracteres da hash como token
+      return hashEmail.substring(0, 15);
+    }
+
 
     // Fetch dados da API
     try {
@@ -97,4 +97,4 @@ function Login() {
   );
 }
 
-export default Login;
+
