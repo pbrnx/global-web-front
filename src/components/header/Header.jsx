@@ -2,6 +2,7 @@ import React from 'react';
 import './Header.scss';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Logo from "/assets/logo.png";
+import toast from 'react-hot-toast';
 
 export default function Header({ children }) {
     const navigate = useNavigate();
@@ -14,6 +15,7 @@ export default function Header({ children }) {
         sessionStorage.removeItem('userMail');
         sessionStorage.removeItem('userName');
         navigate('/login');
+        toast("Obrigado por utilizar o hAppVida Fitness. Volte sempre!")
     }
 
     // Verifica se a rota atual é /cadastro ou /login

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from "react-router-dom";
 import '../scss/Form.scss';
+import toast from 'react-hot-toast';
 
 
 function Cadastro() {
@@ -49,15 +50,14 @@ function Cadastro() {
     // Verifica se todos os campos foram preenchidos e se o e-mail é válido
     const checkMail = email.trim();
     if (nome.length === 0 || email.length === 0 || senha.length === 0 || !checkboxChecked || !checkMail.includes('@')) {
-      alert("Verifique se preencheu todos os campos corretamente!");
+      toast.error("Verifique se preencheu todos os campos corretamente!");
       return;
     }
 
     // Verifica se o e-mail já está cadastrado
     const emailExists = await verifyUserExists(email);
     if (emailExists) {
-      alert("Este email já está cadastrado!");
-      history('/login');
+      toast.error("Este email já está cadastrado!");
       return;
     }
 
@@ -81,16 +81,16 @@ function Cadastro() {
         throw new Error('Erro ao cadastrar. Tente novamente.');
       }
 
-      alert('Cadastro realizado com sucesso! \nObrigado por fazer parte do hAppVida Fitness');
+      toast.success('Cadastro realizado com sucesso! \nObrigado por fazer parte do hAppVida Fitness');
       history('/login');
     } catch (error) {
-      alert(error.message);
+      toast.error(error.message);
     }
   };
 
   return (
     <>
-     
+    
  <h1>Cadastre-se e faça parte do nosso projeto!</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="loginUsername">Nome:</label>

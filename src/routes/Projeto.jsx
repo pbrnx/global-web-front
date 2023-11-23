@@ -1,18 +1,16 @@
 import React from 'react';
-import Header from "../components/header/Header.jsx";
 import Footer from "../components/footer/Footer.jsx";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import "../scss/Projeto.scss";
+
 
 export default function Home() {
   document.title = "hAppVida Fitness | Home";
-
-
   const [hoveredImage, setHoveredImage] = useState(null);
-
+  
+  
   return (
     <>
-      <Header />
       <main className="main-content">
         <section className="carousel-container">
           <aside className="carousel">

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import '../scss/Form.scss';
+import toast from 'react-hot-toast';
+
 
 function Login() {
   
@@ -13,8 +15,8 @@ function Login() {
     const isLoggedIn = sessionStorage.getItem('isLoggedIn');
 
     if (isLoggedIn) {
-      alert('Você já está logado.');
-      history('/'); 
+      toast('Você já está logado.');
+      history('/');
       return true; 
     }
     return false; 
@@ -48,19 +50,21 @@ function Login() {
           sessionStorage.setItem('isLoggedIn', 'true');
           sessionStorage.setItem('userName', user.nome); 
           sessionStorage.setItem('userMail', user.email);// Guardar informações do usuário no session storage
-          history('/'); 
-          alert("Login bem sucedido! Bem-vindo(a) " + user.nome + "!");
-      } else {
-          alert("Credenciais de Login não encontradas.");
+          toast.success("Login bem sucedido! Bem-vindo(a) " + user.nome + "!");
+          history('/');
+       
+    }  
+    else {
+          toast.error("Credenciais de Login não encontradas.");
       }
   } catch (error) {
-      alert("Erro ao validar o login: " + error.message);
+      toast.error("Erro ao validar o login: " + error.message);
   }
 };
 
   return (
     <>
-    
+     
       <h1>Faça Login</h1>
       
       <form>
