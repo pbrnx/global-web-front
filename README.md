@@ -2,6 +2,8 @@
 - Pedro Augusto Barone - RM: 99781
 - João Pedro de Albuquerque Oliveira - RM:551579
 
+deploy netlify: https://happvida.netlify.app/login (Só funciona se rodar o json server localmente!)
+
 # Aplicação hAppVida Fitness
 Uma aplicação que demonstra o que a hAppVida Fitness é, simulando cadastro e login via API Json.
 Para testar, logue com o usuário presente no arquivo "users.json" (Login: user@teste.com // Senha: 12345). Caso deseje, também pode cadastrar o seu próprio usuário pela UI do site.
