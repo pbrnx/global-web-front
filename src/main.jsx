@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { createBrowserRouter, RouterProvider, Route, Navigate } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 
 // Função para verificar se o usuário está logado
 const requireAuth = () => {
@@ -22,23 +22,14 @@ import Cadastro from './routes/Cadastro.jsx';
 import Login from './routes/Login';
 import Projeto from './routes/Projeto.jsx';
 import App from './App.jsx';
+import NotFound from './routes/Error.jsx';
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    children: [
-      {
-        path: "/",
-        element: (
-          <ProtectedRoute>
-            <Projeto />
-          </ProtectedRoute>
-        )
-      },
+  {path: "/",element: <App />, errorElement:<NotFound/>,
+  children: [{
+    path: "/",element: (<ProtectedRoute><Projeto /></ProtectedRoute>)},
       { path: "/cadastro", element: <Cadastro /> },
-      { path: "/login", element: <Login /> }
-      
+      { path: "/login", element: <Login /> }     
     ]
   }
 ]);
