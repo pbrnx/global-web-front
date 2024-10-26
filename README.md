@@ -1,6 +1,6 @@
-# Integrantes (Todos 1ESPV)
+# Integrantes
 - Pedro Augusto Barone - RM: 99781
-- João Pedro de Albuquerque Oliveira - RM:551579
+
 
 deploy netlify: https://happvida.netlify.app/login (Só funciona se rodar o json server localmente!)
 
